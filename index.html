@@ -1,296 +1,419 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="is-loading">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>陈云 · 新媒体运营作品集 | 平面设计 · 视频剪辑 · 内容创作</title>
-<meta name="description" content="陈云 · 新媒体运营 / 内容运营 · 视觉设计。8年跨界经验，专注平面设计、视频剪辑、公众号运营与 UI/UX 设计。">
+<meta name="description" content="陈云 · 新媒体运营 / 内容运营 · 视觉设计。8 年跨界经验，专注平面设计、视频剪辑、公众号运营与 UI/UX 设计。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232B32E8'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'%3E陈%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F5BD8'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='sans-serif'%3E陈%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/css/home.css">
-<link rel="stylesheet" href="assets/css/toolbox.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Public+Sans:wght@400;500;600;700;800;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/px-v2.css">
 </head>
 <body>
 
-  <!-- ===== 进度条 ===== -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+<!-- ========== SVG 滤镜：线稿（边缘检测） ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="lineArt" color-interpolation-filters="sRGB">
+    <feColorMatrix type="saturate" values="0"/>
+    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 4 -1 0 -1 0" divisor="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 1 1 0 -0.35"/>
+    <feGaussianBlur stdDeviation="0.4"/>
+  </filter>
+  <filter id="lineArtDense" color-interpolation-filters="sRGB">
+    <feColorMatrix type="saturate" values="0"/>
+    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0" divisor="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 1 1 0 -0.22"/>
+  </filter>
+</svg>
 
-  <!-- ===== 导航 ===== -->
-  <header class="nav" id="nav">
-    <a href="#hero" class="nav-brand">陈云<span>.</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about">关于</a>
-      <a href="#skills">能力</a>
-      <a href="#tools">工具箱</a>
-      <a href="#graphic">平面设计</a>
-      <a href="#stickers">表情包</a>
-      <a href="#video">视频剪辑</a>
-      <a href="#ui">UI 设计</a>
-      <a href="#experience">经历</a>
-      <a href="#contact" class="nav-cta">联系我</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
-  </header>
+<!-- ========== 加载器 ========== -->
+<div class="loader" id="loader">
+  <span class="loader-brand">CHENYUN<em>®</em></span>
+  <div class="loader-count" id="loaderCount">
+    <span class="loader-digit">
+      <svg viewBox="0 0 300 200" preserveAspectRatio="none"><path pathLength="1" d="M150 .5H270A29.5 29.5 0 0 1 299.5 30V170A29.5 29.5 0 0 1 270 199.5H30A29.5 29.5 0 0 1 .5 170V30A29.5 29.5 0 0 1 30 .5H150"/></svg>
+      <span data-digit>0</span>
+    </span>
+    <span class="loader-digit">
+      <svg viewBox="0 0 300 200" preserveAspectRatio="none"><path pathLength="1" d="M150 .5H270A29.5 29.5 0 0 1 299.5 30V170A29.5 29.5 0 0 1 270 199.5H30A29.5 29.5 0 0 1 .5 170V30A29.5 29.5 0 0 1 30 .5H150"/></svg>
+      <span data-digit>0</span>
+    </span>
+    <span class="loader-digit">
+      <svg viewBox="0 0 300 200" preserveAspectRatio="none"><path pathLength="1" d="M150 .5H270A29.5 29.5 0 0 1 299.5 30V170A29.5 29.5 0 0 1 270 199.5H30A29.5 29.5 0 0 1 .5 170V30A29.5 29.5 0 0 1 30 .5H150"/></svg>
+      <span data-digit>0</span>
+    </span>
+  </div>
+</div>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-grain" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow reveal">新媒体运营 · 内容创作 · 视觉设计</p>
-      <h1 class="hero-title">
-        <span class="reveal" style="--d:.05s">陈云</span>
-        <span class="hero-sub reveal" style="--d:.18s">用设计与内容<br>讲好每一个品牌故事</span>
-      </h1>
-      <p class="hero-desc reveal" style="--d:.3s">8 年+ 跨界经验的内容运营与视觉设计者。从公众号图文、活动短片到品牌 VI 与 UI 系统，能把"想说的"变成"看得见的"。</p>
-      <div class="hero-stats">
-        <div class="stat reveal" style="--d:.4s"><b class="count" data-to="8" data-suffix="+">0</b><span>年工作经验</span></div>
-        <div class="stat reveal" style="--d:.5s"><b class="count" data-to="7" data-suffix="年">0</b><span>设计功底</span></div>
-        <div class="stat reveal" style="--d:.6s"><b class="count" data-to="4" data-suffix="+">0</b><span>视频成片</span></div>
-        <div class="stat reveal" style="--d:.7s"><b class="count" data-to="36" data-suffix="+">0</b><span>原创表情包</span></div>
-      </div>
-      <div class="hero-cta reveal" style="--d:.8s">
-        <a href="#graphic" class="btn btn-solid" data-hover>查看作品</a>
-        <a href="#contact" class="btn btn-line" data-hover>联系我</a>
-      </div>
+<!-- ========== 背景层 ========== -->
+<div class="bg-grid" id="bgGrid" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true">DRAG</div>
+
+<!-- ========== 导航 ========== -->
+<header class="nav">
+  <a href="#top" class="brand" data-hover-none>CHENYUN<em>®</em></a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta"><span class="roll"><i>联系我</i><i>联系我</i></span></a>
+    <button class="nav-menu" id="menuToggle" type="button" aria-expanded="false">
+      <span class="roll"><i>菜单</i><i>关闭</i></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== 菜单面板 ========== -->
+<div class="menu-panel" id="menuPanel" aria-hidden="true">
+  <nav class="menu-list">
+    <a href="#about"><span>关于我</span><small>01 / ABOUT</small></a>
+    <a href="#results"><span>直观的成果</span><small>02 / WORKS</small></a>
+    <a href="#graphic"><span>平面设计</span><small>03 / GRAPHIC</small></a>
+    <a href="#video"><span>视频剪辑</span><small>04 / VIDEO</small></a>
+    <a href="#toolbox"><span>工具箱</span><small>05 / TOOLBOX</small></a>
+    <a href="#works"><span>品牌画册</span><small>06 / ALBUMS</small></a>
+    <a href="#ui"><span>UI 设计</span><small>07 / INTERFACE</small></a>
+    <a href="#contact"><span>取得联系</span><small>08 / CONTACT</small></a>
+  </nav>
+  <div class="menu-foot">
+    <span>1294396008@qq.com</span>
+    <span>151 5232 7356</span>
+    <span>江苏 · 苏州</span>
+  </div>
+</div>
+
+<main class="page">
+
+<!-- ========== 首屏 · Klein Blue + 3D 悬浮物 + 门户矩形 ========== -->
+<section class="hero" id="top">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;</div>
+      <div class="marquee-group">RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;RESUME PORTFILO&nbsp;&nbsp;·&nbsp;&nbsp;</div>
     </div>
-    <a href="#about" class="hero-scroll reveal" style="--d:1s">向下滚动 <i></i></a>
-  </section>
-
-  <!-- ===== 关于我 ===== -->
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-photo reveal">
-        <div class="photo-frame">
-          <img src="assets/portrait.png" alt="陈云">
-          <span class="photo-tag">CONTENT &amp; VISUAL</span>
-        </div>
-      </div>
-      <div class="about-text">
-        <p class="sec-eyebrow reveal">关于我 · ABOUT</p>
-        <h2 class="sec-title reveal" style="--d:.08s">设计与内容双修的<br>复合型运营者</h2>
-        <p class="about-lead reveal" style="--d:.16s">我是 <b>陈云</b>，29 岁，拥有 <b>8 年+</b> 工作经验与 <b>7 年</b> 平面 / UI 设计功底。既能独立产出公众号内容、剪辑活动短片，也能主导品牌视觉与产品 UI——把"运营目标"翻译成"好看又好用"的呈现。</p>
-        <ul class="about-points">
-          <li class="reveal" style="--d:.24s"><i>01</i><div><b>平面 / UI 设计</b><span>熟练 PS / AI / Sketch，覆盖企业 IP、品牌 VI、电商视觉、活动物料与多端 UI。</span></div></li>
-          <li class="reveal" style="--d:.32s"><i>02</i><div><b>视频剪辑与内容生产</b><span>熟练剪映 / After Effects，独立成片全流程：素材筛选、节奏、配乐、字幕。</span></div></li>
-          <li class="reveal" style="--d:.4s"><i>03</i><div><b>公众号运营能力</b><span>两段实战经历，独立负责内容编辑、图文排版与定期推送，稳定输出。</span></div></li>
-          <li class="reveal" style="--d:.48s"><i>04</i><div><b>内容创作 + 视觉设计</b><span>同一人兼顾"写"与"画"，沟通零损耗，落地更顺畅。</span></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 核心能力 ===== -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <p class="sec-eyebrow reveal">核心能力 · CAPABILITIES</p>
-      <h2 class="sec-title reveal" style="--d:.08s">我能为你做些什么</h2>
-      <div class="skill-grid">
-        <article class="skill-card reveal" style="--d:.1s" data-hover>
-          <div class="skill-ico">✺</div>
-          <h3>平面设计</h3>
-          <p>海报、Logo、VI 手册、活动物料、展陈与周边。从主视觉到落地物料全链路输出。</p>
-          <div class="skill-tags"><span>Photoshop</span><span>Illustrator</span><span>品牌 VI</span></div>
-        </article>
-        <article class="skill-card reveal" style="--d:.2s" data-hover>
-          <div class="skill-ico">▷</div>
-          <h3>视频剪辑</h3>
-          <p>宣传短片、活动纪实、产品视频。剪映 / AE 独立完成拍摄协作、剪辑与包装。</p>
-          <div class="skill-tags"><span>剪映</span><span>After Effects</span><span>短视频</span></div>
-        </article>
-        <article class="skill-card reveal" style="--d:.3s" data-hover>
-          <div class="skill-ico">✎</div>
-          <h3>公众号运营</h3>
-          <p>内容策划、图文排版、定期推送。两段实战，扎实文字功底与稳定输出能力。</p>
-          <div class="skill-tags"><span>内容策划</span><span>图文排版</span><span>数据分析</span></div>
-        </article>
-        <article class="skill-card reveal" style="--d:.4s" data-hover>
-          <div class="skill-ico">◳</div>
-          <h3>UI / UX 设计</h3>
-          <p>Web 后台、微信小程序、App 的全量界面设计，需求拆解到走查验收全流程。</p>
-          <div class="skill-tags"><span>Sketch</span><span>高保真</span><span>设计走查</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 工具箱 ===== -->
-  <section class="tools" id="tools">
-    <div class="container">
-      <p class="sec-eyebrow reveal">工具箱 · MY TOOLBOX</p>
-      <h2 class="sec-title reveal" style="--d:.08s">撑起内容生产的工具</h2>
-      <p class="sec-note reveal" style="--d:.14s">从设计、原型到剪辑与 AI 辅助编程 —— 鼠标悬停翻看每个工具的用途。</p>
-      <div class="tools-grid">
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/figma.svg" alt="Figma"><b>Figma</b><p>UI/UX 设计</p></div>
-          <div class="tool-back"><p>高保真界面、交互原型、设计系统与组件库构建，团队协作与交付核心工具。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/axure.png" alt="Axure"><b>Axure</b><p>原型设计</p></div>
-          <div class="tool-back"><p>复杂业务流程与低保真原型输出，快速验证产品逻辑与交互路径。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/illustrator.png" alt="Illustrator"><b>Illustrator</b><p>品牌 / IP 设计</p></div>
-          <div class="tool-back"><p>品牌 VI、Logo、吉祥物 IP、表情包、印刷物料与矢量插画创作。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/photoshop.png" alt="Photoshop"><b>Photoshop</b><p>视觉合成</p></div>
-          <div class="tool-back"><p>电商详情页、海报、活动物料、图片精修与视觉特效处理。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/claude-code.png" alt="Claude Code"><b>Claude Code</b><p>AI 辅助编程</p></div>
-          <div class="tool-back"><p>深度使用 Vibe Coding 完成 GEO 项目，从需求到代码实现的高效闭环。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/lark.svg" alt="飞书"><b>飞书</b><p>产品文档</p></div>
-          <div class="tool-back"><p>PRD 撰写、需求池管理、项目进度跟踪与团队知识库沉淀。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/ai-tools.svg" alt="AI 设计工具"><b>AI 设计工具</b><p>GPT / Figma AI</p></div>
-          <div class="tool-back"><p>GPT Image、Figma AI、UXbot、Seedream 等工具辅助视觉创意与素材生成。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/premiere.png" alt="Premiere"><b>Premiere</b><p>视频剪辑</p></div>
-          <div class="tool-back"><p>企业宣传片、活动短片、价值观视频与社交媒体短视频剪辑。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/trae.png" alt="TRAE"><b>TRAE</b><p>AI 编程助手</p></div>
-          <div class="tool-back"><p>AI 原生 IDE，深度用于 Vibe Coding、产品原型开发与前端实现的高效闭环。</p></div>
-        </div></div>
-        <div class="tool reveal" data-hover><div class="tool-inner">
-          <div class="tool-front"><img class="tool-logo" src="assets/logos/sketch.png" alt="Sketch"><b>Sketch</b><p>界面设计</p></div>
-          <div class="tool-back"><p>矢量界面设计工具，用于 UI/UX 设计、原型构建与设计系统沉淀。</p></div>
-        </div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 平面设计 ===== -->
-  <section class="works" id="graphic">
-    <div class="container">
-      <p class="sec-eyebrow reveal">作品展示 · WORKS</p>
-      <h2 class="sec-title reveal" style="--d:.08s">平面设计</h2>
-      <p class="sec-note reveal" style="--d:.14s">海报 · Logo · 活动物料 · 展陈 · 品牌 VI —— 点击任意图可放大查看。</p>
-      <div class="album-poster" id="albumPoster"></div>
-      <div class="album" id="albumGraphic"></div>
-    </div>
-  </section>
-
-  <!-- ===== 动态表情包 ===== -->
-  <section class="works stickers-sec" id="stickers">
-    <div class="container">
-      <p class="sec-eyebrow reveal">作品展示 · WORKS</p>
-      <h2 class="sec-title reveal" style="--d:.08s">动态表情包</h2>
-      <p class="sec-note reveal" style="--d:.14s">企业微信上架吉祥物表情包，分两弹共 39 款——让品牌人格融入日常沟通。点击可放大查看。</p>
-      <div class="sticker-grid" id="stickerGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== 视频剪辑 ===== -->
-  <section class="works works-video" id="video">
-    <div class="container">
-      <p class="sec-eyebrow reveal">作品展示 · WORKS</p>
-      <h2 class="sec-title reveal" style="--d:.08s">视频剪辑</h2>
-      <p class="sec-note reveal" style="--d:.14s">企业宣传短片与活动纪实 —— 点击播放。</p>
-      <div class="video-grid" id="videoGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== UI 设计 ===== -->
-  <section class="works" id="ui">
-    <div class="container">
-      <p class="sec-eyebrow reveal">作品展示 · WORKS</p>
-      <h2 class="sec-title reveal" style="--d:.08s">UI 设计</h2>
-      <p class="sec-note reveal" style="--d:.14s">Web 后台系统、业务小程序与产品 App 的界面设计精选 —— 点击查看完整案例。</p>
-      <div class="ui-grid" id="albumUI"></div>
-    </div>
-  </section>
-
-  <!-- ===== 工作经历 ===== -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <p class="sec-eyebrow reveal">工作经历 · EXPERIENCE</p>
-      <h2 class="sec-title reveal" style="--d:.08s">一路走来</h2>
-      <div class="timeline">
-        <article class="tl-card reveal" style="--d:.1s" data-hover>
-          <span class="tl-date">2021.08 – 2026.02</span>
-          <h4>新媒体设计</h4>
-          <span class="tl-co">苏州优乐蜂环保科技有限公司</span>
-          <ul>
-            <li>公众号内容运营，独立完成 7 场大型活动宣传短片剪辑与全套视觉物料设计。</li>
-            <li>主导 5 个 Web 后台、4 个小程序、1 个安卓 App 全量 UI/UX 设计，还原度稳定 85%+。</li>
-            <li>官网 + 2 套业务系统 + 1 款小程序从 0 到 1 视觉设计全流程。</li>
-            <li>原创企业吉祥物 IP，输出表情包 36+、品牌海报与办公周边。</li>
-          </ul>
-        </article>
-        <article class="tl-card reveal" style="--d:.22s" data-hover>
-          <span class="tl-date">2020.07 – 2021.08</span>
-          <h4>运营</h4>
-          <span class="tl-co">苏州成文留学培训服务有限公司</span>
-          <ul>
-            <li>配合市场销售完成线上线下活动策划与落地，支持方案到执行全链路。</li>
-            <li>独立完成活动现场摄影与素材整理，输出可直接使用的内容。</li>
-            <li>品牌宣传视觉输出：活动物料、海报、宣传画册、书籍定制封面、活动 PPT。</li>
-            <li>建立销售业绩跟踪台账，定期汇总数据反馈运营优化建议。</li>
-          </ul>
-        </article>
-        <article class="tl-card reveal" style="--d:.34s" data-hover>
-          <span class="tl-date">2019.08 – 2020.07</span>
-          <h4>设计 &amp; 运营</h4>
-          <span class="tl-co">苏州荷马网络科技有限公司</span>
-          <ul>
-            <li>荷马优选小程序整体视觉风格定义、交互优化与页面结构重构。</li>
-            <li>制定企业 VI 视觉识别系统标准化方案，统一品牌传达。</li>
-            <li>独立完成线下活动公众号文章编写发布与全套物料设计。</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 联系 ===== -->
-  <section class="contact" id="contact">
-    <div class="container contact-inner">
-      <p class="sec-eyebrow reveal">取得联系 · CONTACT</p>
-      <h2 class="sec-title reveal" style="--d:.08s">一起把好内容<br>做出来</h2>
-      <p class="contact-role reveal" style="--d:.16s">求职意向：<b>内容运营 / 自媒体助理</b></p>
-      <div class="contact-items">
-        <a class="citem reveal" style="--d:.24s" href="mailto:1294396008@qq.com" data-hover>
-          <span class="ci-label">邮箱</span><span class="ci-val">1294396008@qq.com</span>
-        </a>
-        <a class="citem reveal" style="--d:.32s" href="tel:15152327356" data-hover>
-          <span class="ci-label">电话</span><span class="ci-val">151 5232 7356</span>
-        </a>
-        <div class="citem reveal" style="--d:.4s">
-          <span class="ci-label">所在地</span><span class="ci-val">江苏 · 苏州</span>
-        </div>
-        <div class="citem reveal" style="--d:.48s">
-          <span class="ci-label">学历</span><span class="ci-val">苏州农业职业技术学院 · 大专</span>
-        </div>
-      </div>
-      <p class="contact-foot reveal" style="--d:.56s">作品材料：平面设计作品集 · 网页版个人站</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© 2026 陈云 · 新媒体运营作品集</span>
-      <span class="footer-marq" id="footerMarq">平面设计 · 动态表情包 · 视频剪辑 · 公众号运营 · UI 设计 · 品牌视觉 · 内容创作 · 工具箱 ·</span>
-    </div>
-  </footer>
-
-  <!-- ===== 灯箱 ===== -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" id="lbClose" aria-label="关闭">✕</button>
-    <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
-    <figure class="lb-stage" id="lbStage"></figure>
-    <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
-    <span class="lb-counter" id="lbCounter"></span>
+  </div>
+  <div class="hero-top">
+    <p class="hero-tag">When ordinary isn’t enough,<br>we make content work harder.</p>
+    <p class="hero-role">新媒体运营 · 内容创作 · 视觉设计<br>Chen Yun — Suzhou, CN</p>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="assets/js/home.js"></script>
+  <div class="hero-mid">
+    <div class="hero-portrait-wrap">
+      <p class="hero-greet">Hi, I'm <em>Cyra!</em></p>
+      <div class="hero-flip" id="heroFlip" tabindex="0" aria-label="悬停翻转查看名片">
+        <div class="hero-flip-inner">
+          <div class="hero-flip-front">
+            <img src="assets/portrait-ext.png" alt="Cyra 形象照">
+          </div>
+          <div class="hero-flip-back" aria-hidden="true">
+            <span class="flip-ring-c"></span>
+            <span class="flip-ring-c sm"></span>
+            <svg class="flip-ring" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs><path id="flipRingPath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+              <text><textPath href="#flipRingPath" startOffset="0">✦&nbsp;SCROLL DOWN&nbsp;✦&nbsp;AND KNOW ME BETTER&nbsp;</textPath></text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <h1 class="hero-h1">
+      <span class="rv"><span>8 年跨界经验的内容运营与视觉设计者。</span></span>
+      <span class="rv" style="transition-delay:.09s"><span>从公众号图文、活动短片到品牌 VI 与 UI 系统，</span></span>
+      <span class="rv" style="transition-delay:.18s"><span>能把「想说的」变成「看得见的」。</span></span>
+    </h1>
+    <div class="hero-stats">
+      <div><b class="count" data-to="8" data-suffix="+">0</b><span>年经验</span></div>
+      <div><b class="count" data-to="7" data-suffix="年">0</b><span>设计功底</span></div>
+      <div><b class="count" data-to="15" data-suffix="+">0</b><span>视频成片</span></div>
+      <div><b class="count" data-to="38" data-suffix="款">0</b><span>原创表情包</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 第二屏 · 滚动线稿背景（内容已移至关于我） ========== -->
+<section class="viewport-sec" id="viewport">
+  <div class="sketch-field" id="sketchField" aria-hidden="true"></div>
+</section>
+
+<!-- ========== 关于我（含工作经历 · 一屏） ========== -->
+<section class="section about-me" id="about">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>关于我 · ABOUT ME</p>
+    <div class="about-card" data-rv>
+      <div class="about-img" aria-hidden="true">
+        <img src="assets/portrait.png" alt="陈云形象">
+        <span class="am-cap">CONTENT &amp; VISUAL</span>
+      </div>
+      <div class="about-body">
+        <p class="about-hi">Hi, I am Yun Chen!</p>
+        <p class="about-lead">兼具 <b>7 年+ 内容与视觉经验</b>的复合型创作者——「内容运营 × 视觉设计 × 视频剪辑」三合一，用产品思维做内容，用设计能力落地传播。</p>
+        <p class="about-text">拥有两段公众号实战经历，独立负责内容编辑、图文排版与定期推送，具备扎实文字功底；熟练使用剪映、Adobe Effects 独立完成多条视频剪辑成片，覆盖素材筛选、剪辑节奏、配乐与字幕全流程，可独立完成活动现场拍摄与素材整理；7 年平面 / UI 设计经验，覆盖企业 IP 打造、品牌 VI、电商视觉、活动物料与 UI/UX 多场景，可同时胜任内容创作与视觉设计。</p>
+        <div class="about-stats">
+          <div class="astat"><b>7<small>+</small></b><span>年工作经验</span></div>
+          <div class="astat"><b>8<small>+</small></b><span>项目经验</span></div>
+          <div class="astat"><b>85<small>%+</small></b><span>设计还原度</span></div>
+        </div>
+        <div class="about-tags"><span>内容运营</span><span>公众号运营</span><span>图文排版</span><span>视频剪辑</span><span>品牌视觉</span><span>IP 设计</span></div>
+      </div>
+    </div>
+
+    <!-- 横向工作经历时间轴 -->
+    <div class="htl">
+      <div class="htl-rail" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="htl-grid">
+        <div class="htl-card" data-rv>
+          <span class="htl-date">2021.08 – 2026.02</span>
+          <h4>新媒体设计 · 内容与视觉</h4>
+          <span class="htl-co">苏州优乐蜂环保科技有限公司</span>
+          <p>独立完成 7 场大型活动的宣传短片剪辑与全套视觉物料；主导 5 个 Web 后台、4 个小程序与 1 个 App 的 UI/UX 设计，还原度 85%+；协助公众号内容创作、配图设计与发文；原创企业吉祥物 IP，输出 36+ 微信表情包与全渠道视觉延展。</p>
+        </div>
+        <div class="htl-card" data-rv>
+          <span class="htl-date">2020.07 – 2021.08</span>
+          <h4>运营 · 内容与活动</h4>
+          <span class="htl-co">苏州成文留学培训服务有限公司</span>
+          <p>独立负责公众号内容编辑与定期推送，完成素材筛选、图文排版与发布；配合市场完成线上线下活动策划与落地，独立完成活动现场摄影及素材整理；输出品牌宣传视觉（物料、海报、画册、书籍封面、活动 PPT）与销售业绩台账。</p>
+        </div>
+        <div class="htl-card" data-rv>
+          <span class="htl-date">2019.08 – 2020.07</span>
+          <h4>设计 &amp; 运营</h4>
+          <span class="htl-co">苏州荷马网络科技有限公司</span>
+          <p>独立完成线下活动 10+ 产品线的公众号文章编写与发布，覆盖内容策划、撰写、排版与推送全流程；负责「荷马优选」小程序视觉风格定义、交互优化与 VI 规范；协助后台产品上架、广告位配置与运营数据查询。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 直观的成果 ========== -->
+<section class="section results-sec" id="results">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>直观的成果 · SELECTED WORKS</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>看得见的产出</span></span></h2>
+    <p class="lead" style="margin-bottom:2.6rem" data-rv>从官网、小程序到 IP 与宣传片——下面几件都是亲手落地的结果，点开可跳到对应作品。</p>
+    <div class="results-grid" id="resultsGrid"></div>
+  </div>
+</section>
+
+<!-- ========== 视频剪辑 ========== -->
+<section class="section" id="video">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>视频剪辑 · VIDEO</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>企业宣传短片与活动纪实</span></span></h2>
+    <p class="lead" style="margin-bottom:2.4rem" data-rv>独立完成拍摄协作、剪辑、包装与字幕。点击任意视频卡片即可放大播放。</p>
+    <div class="video-grid" id="videoGrid"></div>
+  </div>
+</section>
+
+<!-- ========== 工具箱 ========== -->
+<section class="section" id="toolbox">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>工具箱 · TOOLBOX</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>撑起内容生产的工具</span></span></h2>
+    <p class="lead" style="margin-bottom:2.6rem" data-rv>从设计、原型到剪辑与 AI 辅助编程——鼠标悬停翻看每个工具的用途。</p>
+    <div class="tools-grid" data-rv>
+      <div class="tool"><img src="assets/logos/figma.svg" alt="Figma"><div><b>Figma</b><span>UI / UX 设计</span></div><p>高保真界面、交互原型、设计系统与组件库构建，团队协作与交付核心工具。</p></div>
+      <div class="tool"><img src="assets/logos/sketch.png" alt="Sketch"><div><b>Sketch</b><span>界面设计</span></div><p>矢量界面设计工具，用于 UI/UX 设计、原型构建与设计系统沉淀。</p></div>
+      <div class="tool"><img src="assets/logos/axure.png" alt="Axure"><div><b>Axure</b><span>原型设计</span></div><p>复杂业务流程与低保真原型输出，快速验证产品逻辑与交互路径。</p></div>
+      <div class="tool"><img src="assets/logos/illustrator.png" alt="Illustrator"><div><b>Illustrator</b><span>品牌 / IP 设计</span></div><p>品牌 VI、Logo、吉祥物 IP、表情包、印刷物料与矢量插画创作。</p></div>
+      <div class="tool"><img src="assets/logos/photoshop.png" alt="Photoshop"><div><b>Photoshop</b><span>视觉合成</span></div><p>电商详情页、海报、活动物料、图片精修与视觉特效处理。</p></div>
+      <div class="tool"><img src="assets/logos/premiere.png" alt="Premiere"><div><b>Premiere</b><span>视频剪辑</span></div><p>企业宣传片、活动短片、价值观视频与社交媒体短视频剪辑。</p></div>
+      <div class="tool"><img src="assets/logos/feishu.png" alt="飞书"><div><b>飞书</b><span>产品文档</span></div><p>PRD 撰写、需求池管理、项目进度跟踪与团队知识库沉淀。</p></div>
+      <div class="tool"><img src="assets/logos/claude-code.png" alt="Claude Code"><div><b>Claude Code</b><span>AI 辅助编程</span></div><p>深度使用 Vibe Coding 完成 GEO 项目，从需求到代码实现的高效闭环。</p></div>
+      <div class="tool"><img src="assets/logos/trae.png" alt="TRAE"><div><b>TRAE</b><span>AI 编程助手</span></div><p>AI 原生 IDE，深度用于 Vibe Coding、产品原型开发与前端实现的高效闭环。</p></div>
+      <div class="tool"><img src="assets/logos/ai-tools.svg" alt="AI 设计工具"><div><b>AI 设计工具</b><span>GPT / Figma AI</span></div><p>GPT Image、Figma AI、UXbot、Seedream 等工具辅助视觉创意与素材生成。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 品牌画册设计 · 书架 + 翻页 ========== -->
+<section class="section" id="works">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>品牌画册设计 · BRAND ALBUMS</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>四本翻得动的品牌画册</span></span></h2>
+    <p class="lead" style="margin-bottom:1rem" data-rv>点击任意一本，翻开整本画册——自动翻页，也可以点击书的左右两侧手动翻阅。</p>
+    <div class="shelf" id="shelf" data-rv>
+      <div class="shelf-books">
+        <button class="sbook" data-album="youlefeng" type="button">
+          <span class="sbook-cover" style="--ar:595/807"><img src="assets/albums/youlefeng-01.jpg" alt="优乐蜂画册封面"><i class="sbook-spine"></i></span>
+          <span class="sbook-name">优乐蜂画册</span>
+          <span class="sbook-meta">企业品牌 · 20P</span>
+        </button>
+        <button class="sbook" data-album="hema" type="button">
+          <span class="sbook-cover" style="--ar:1/1"><img src="assets/albums/hema-01.jpg" alt="荷马企业画册封面"><i class="sbook-spine"></i></span>
+          <span class="sbook-name">荷马企业画册</span>
+          <span class="sbook-meta">亲子品牌 · 28P</span>
+        </button>
+        <button class="sbook" data-album="changtian" type="button">
+          <span class="sbook-cover" style="--ar:595/807"><img src="assets/albums/changtian-01.jpg" alt="长天快运画册封面"><i class="sbook-spine"></i></span>
+          <span class="sbook-name">长天快运画册</span>
+          <span class="sbook-meta">物流品牌 · 16P</span>
+        </button>
+        <button class="sbook" data-album="chengwen" type="button">
+          <span class="sbook-cover" style="--ar:1/1"><img src="assets/albums/chengwen-01.jpg" alt="成文画册封面"><i class="sbook-spine"></i></span>
+          <span class="sbook-name">成文画册</span>
+          <span class="sbook-meta">留学教育 · 36P</span>
+        </button>
+      </div>
+      <div class="shelf-board" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 平面设计 ========== -->
+<section class="section" id="graphic">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>平面设计 · GRAPHIC</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>海报 · Logo · 物料</span></span></h2>
+    <p class="lead" style="margin-bottom:1rem" data-rv>点击任意图可放大查看。</p>
+    <div class="album" id="albumGraphic"></div>
+  </div>
+</section>
+
+<!-- ========== 品牌 VI 手册（点击放大 + 左右切换） ========== -->
+<section class="section" id="vi">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>品牌 VI 手册 · BRAND VI</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>品牌视觉识别系统 · 10 页</span></span></h2>
+    <p class="lead" style="margin-bottom:2rem" data-rv>点击任意页放大查看，可左右切换翻阅整本手册。</p>
+    <div class="vi-grid" id="viGrid" data-rv></div>
+  </div>
+</section>
+
+<!-- ========== IP 设计（吉祥物 + 动态表情包） ========== -->
+<section class="section" id="ip">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>IP 设计 · MASCOT</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>IP 设计</span></span></h2>
+    <p class="lead ip-oneline" style="margin-bottom:2.4rem" data-rv>原创企业吉祥物「蜂蜂」——从形象设定、设计思路到动态表情包与周边物料的全套品牌延展。</p>
+
+    <!-- IP 介绍 + 首图并排（文字 1/3 · 形象图 2/3） -->
+    <div class="ip-hero" data-rv>
+      <div class="ip-intro">
+        <p class="ip-kicker">UNICLE MASCOT · 原创 IP</p>
+        <h3 class="ip-name">蜂蜂<em>FENGFENG</em></h3>
+        <p class="ip-desc">以蜜蜂为原型打造的品牌卡通 IP——「蜂」与「优乐蜂」品牌名谐音呼应。科技感装扮、绿叶围巾的「环保达人」：额头嵌入品牌 Logo、手持「环保」旗帜，把抽象的企业使命转化为具象的行动姿态，让一家环保科技品牌拥有了温暖、可亲近的品牌人格。</p>
+        <div class="ip-tags"><span>蜜蜂原型 · 品牌基因</span><span>1:1 头身比</span><span>科技蓝荧光触角</span></div>
+        <div class="ip-roles"><b>角色扩展</b>
+          <div class="ip-role-list"><span>信息员</span><span>财务</span><span>运输员</span><span>工程师</span></div>
+        </div>
+      </div>
+      <figure class="ip-board ip-board-lead">
+        <img loading="lazy" src="assets/ip/mascot-hello.png" alt="蜂蜂 IP 形象设定 · Hello Unicle">
+        <figcaption>IP 形象设定 · 蜂蜂 FENGFENG</figcaption>
+      </figure>
+    </div>
+
+    <!-- 设计思路图（整宽） -->
+    <figure class="ip-board" data-rv>
+      <img loading="lazy" src="assets/ip/mascot-board.png" alt="蜂蜂 IP 设计思路 · 三视图 · 角色扩展 · 表情扩展">
+      <figcaption>设计思路 · 三视图 · 角色扩展 · 表情扩展</figcaption>
+    </figure>
+
+    <!-- 动态表情包 -->
+    <div class="sticker-head" data-rv>
+      <h3>动态表情包<em>×2 弹 · 38 款</em></h3>
+      <p>企业微信上架表情包，让品牌人格融入日常沟通。点击可放大查看。</p>
+    </div>
+    <div class="sticker-mosaic" id="stickerGrid"></div>
+  </div>
+</section>
+
+<!-- ========== UI 设计 ========== -->
+<section class="section" id="ui">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>UI 设计 · INTERFACE</p>
+    <h2 class="h2" style="margin-bottom:.8rem"><span class="rv"><span>Web 后台 · 小程序 · App</span></span></h2>
+    <p class="lead" style="margin-bottom:2.4rem" data-rv>需求拆解到走查验收全流程，还原度稳定 85%+。点击查看完整案例。</p>
+    <div class="ui-grid" id="albumUI"></div>
+  </div>
+</section>
+
+<!-- 工作经历已合并至「关于我」板块（见 #about） -->
+
+<!-- ========== 联系 ========== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" data-rv>取得联系 · CONTACT</p>
+    <div class="contact-grid">
+      <div class="contact-head">
+        <h2 class="h2">
+          <span class="rv"><span>一起把好内容</span></span>
+          <span class="rv" style="transition-delay:.08s"><span>做出来</span></span>
+        </h2>
+        <div class="contact-lead" data-rv>
+          <p class="lead">如果我的经历和作品符合你的需求，欢迎随时联系。</p>
+          <p class="contact-accounts">参与运营的账号：优乐蜂环保、荷马亲子苏州站</p>
+        </div>
+      </div>
+      <div class="contact-items">
+        <a class="citem" href="mailto:1294396008@qq.com">
+          <span class="ci-label">邮箱</span><span class="ci-val">1294396008@qq.com</span>
+        </a>
+        <a class="citem" href="tel:15152327356">
+          <span class="ci-label">电话</span><span class="ci-val">151 5232 7356</span>
+        </a>
+        <div class="citem"><span class="ci-label">求职意向</span><span class="ci-val">内容运营 / 自媒体助理</span></div>
+        <div class="citem"><span class="ci-label">所在地</span><span class="ci-val">江苏 · 苏州</span></div>
+        <div class="citem"><span class="ci-label">学历</span><span class="ci-val">苏州农业职业技术学院 · 大专</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 陈云 · 新媒体运营作品集</span>
+    <span class="marq"><span>平面设计 · 动态表情包 · 视频剪辑 · 公众号运营 · UI 设计 · 品牌视觉 · 内容创作 · 工具箱 · 平面设计 · 动态表情包 · 视频剪辑 · 公众号运营 · UI 设计 · 品牌视觉 · 内容创作 · 工具箱 ·&nbsp;</span></span>
+  </div>
+</footer>
+
+</main>
+
+<!-- ========== 翻页画册弹窗 ========== -->
+<div class="flipbook" id="flipbook" aria-hidden="true">
+  <div class="flipbook-backdrop" data-flip-close></div>
+  <div class="flipbook-stage">
+    <div class="flipbook-head">
+      <b id="flipTitle">优乐蜂画册</b>
+      <span class="flip-hint">自动翻页中 · 点击左右两侧可手动翻页</span>
+      <button class="flip-close" id="flipClose" type="button" aria-label="关闭">✕</button>
+    </div>
+    <div class="flipbook-body">
+      <button class="flip-arrow flip-prev" id="flipPrev" type="button" aria-label="上一页"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="book-wrap modal-book">
+        <div class="book" id="book"></div>
+        <div class="book-shadow" aria-hidden="true"></div>
+      </div>
+      <button class="flip-arrow flip-next" id="flipNext" type="button" aria-label="下一页"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="book-meta">
+      <span class="book-page" id="bookPage">01 / 20</span>
+      <div class="book-progress"><i id="bookProgress"></i></div>
+      <button class="flip-auto" id="flipAuto" type="button">暂停自动翻页</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 灯箱 ========== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="关闭">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <figure class="lb-stage" id="lbStage"></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
+  <span class="lb-counter" id="lbCounter"></span>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script type="importmap">
+{ "imports": { "three": "./assets/vendor/three.module.js", "cannon-es": "./assets/vendor/cannon-es.js" } }
+</script>
+<script type="module" src="assets/js/px-scene.js"></script>
+<script src="assets/js/px-main.js"></script>
 </body>
 </html>
